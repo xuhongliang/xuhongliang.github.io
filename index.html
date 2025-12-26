@@ -3,304 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人博客</title>
+    <title>徐洪亮的个人博客</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f8f9fa;
         }
-
+        
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
-
-        /* Header Styles */
+        
         header {
+            text-align: center;
+            padding: 40px 0;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 2rem 0;
-            text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 30px;
+            border-radius: 8px;
         }
-
-        .header-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
         }
-
-        .header-content p {
-            font-size: 1.2rem;
+        
+        .tagline {
+            font-size: 1.2em;
             opacity: 0.9;
         }
-
-        /* Navigation */
-        nav {
+        
+        .intro {
             background: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
         }
-
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin: 0 1rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
+        
+        .intro h2 {
             color: #667eea;
+            margin-bottom: 15px;
         }
-
-        /* Main Content */
-        .main-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        /* Blog Posts */
+        
         .blog-posts {
             background: white;
-            padding: 2rem;
+            padding: 30px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
-        .post {
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #eee;
+        
+        .blog-posts h2 {
+            color: #667eea;
+            margin-bottom: 20px;
         }
-
+        
+        .post {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        
         .post:last-child {
             border-bottom: none;
             margin-bottom: 0;
-            padding-bottom: 0;
         }
-
-        .post h2 {
+        
+        .post h3 {
             color: #333;
-            margin-bottom: 0.5rem;
-            font-size: 1.5rem;
+            margin-bottom: 8px;
         }
-
+        
         .post-meta {
             color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+            font-size: 0.9em;
+            margin-bottom: 10px;
         }
-
+        
         .post-excerpt {
             color: #555;
-            line-height: 1.7;
+            line-height: 1.6;
         }
-
-        .read-more {
-            display: inline-block;
-            margin-top: 1rem;
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .read-more:hover {
-            text-decoration: underline;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            align-self: start;
-        }
-
-        .sidebar-section {
-            margin-bottom: 2rem;
-        }
-
-        .sidebar-section h3 {
-            color: #333;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #667eea;
-        }
-
-        .about-me p {
-            color: #555;
-            line-height: 1.7;
-        }
-
-        .social-links {
-            list-style: none;
-        }
-
-        .social-links li {
-            margin-bottom: 0.5rem;
-        }
-
-        .social-links a {
-            color: #667eea;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #764ba2;
-        }
-
-        /* Footer */
+        
         footer {
-            background: #333;
-            color: white;
             text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
+            padding: 20px;
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9em;
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .main-content {
-                grid-template-columns: 1fr;
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
             }
             
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .nav-links li {
-                margin: 0.5rem 0;
-            }
-            
-            .header-content h1 {
-                font-size: 2rem;
+            h1 {
+                font-size: 2em;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <h1>我的个人博客</h1>
-                <p>分享技术、生活与思考</p>
-            </div>
-        </div>
-    </header>
-
-    <nav>
-        <div class="container">
-            <ul class="nav-links">
-                <li><a href="#home">首页</a></li>
-                <li><a href="#about">关于</a></li>
-                <li><a href="#blog">博客</a></li>
-                <li><a href="#contact">联系</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <div class="container">
-        <div class="main-content">
-            <div class="blog-posts">
-                <h2>最新文章</h2>
-                
-                <article class="post">
-                    <h2>如何开始学习前端开发</h2>
-                    <div class="post-meta">发布于 2023年12月15日 | 标签: 前端, JavaScript</div>
-                    <div class="post-excerpt">
-                        <p>前端开发是一个充满挑战和机遇的领域。随着技术的不断发展，学习前端开发的路径也在不断变化。本文将分享一些学习前端开发的有效方法和资源...</p>
-                    </div>
-                    <a href="#" class="read-more">阅读更多 →</a>
-                </article>
-
-                <article class="post">
-                    <h2>React 最佳实践指南</h2>
-                    <div class="post-meta">发布于 2023年12月10日 | 标签: React, JavaScript</div>
-                    <div class="post-excerpt">
-                        <p>React 作为目前最流行的前端框架之一，掌握其最佳实践对于开发高质量应用至关重要。本文将介绍一些在实际项目中验证过的 React 最佳实践...</p>
-                    </div>
-                    <a href="#" class="read-more">阅读更多 →</a>
-                </article>
-
-                <article class="post">
-                    <h2>个人项目开发经验分享</h2>
-                    <div class="post-meta">发布于 2023年12月5日 | 标签: 项目管理, 经验</div>
-                    <div class="post-excerpt">
-                        <p>在过去的一年中，我完成了几个个人项目。通过这些项目，我学到了很多宝贵的经验。本文将分享我在项目规划、开发和部署过程中的一些心得体会...</p>
-                    </div>
-                    <a href="#" class="read-more">阅读更多 →</a>
-                </article>
-
-                <article class="post">
-                    <h2>技术博客写作心得</h2>
-                    <div class="post-meta">发布于 2023年11月28日 | 标签: 写作, 技术</div>
-                    <div class="post-excerpt">
-                        <p>写作是巩固知识和分享经验的重要方式。本文将分享我在技术博客写作过程中的一些心得，包括如何选题、如何组织内容以及如何保持持续更新...</p>
-                    </div>
-                    <a href="#" class="read-more">阅读更多 →</a>
-                </article>
+        <header>
+            <h1>徐洪亮的个人博客</h1>
+            <p class="tagline">记录生活点滴，分享技术心得</p>
+        </header>
+        
+        <section class="intro">
+            <h2>关于我</h2>
+            <p>欢迎来到我的个人博客！我是一名热爱技术的开发者，喜欢探索新技术，分享学习心得。在这里，我会记录工作中的经验、学习笔记以及生活感悟。希望通过这个平台，能与更多志同道合的朋友交流学习。</p>
+        </section>
+        
+        <section class="blog-posts">
+            <h2>最新文章</h2>
+            <div class="post">
+                <h3>如何构建现代化的前端项目</h3>
+                <div class="post-meta">发布于 2025年12月27日</div>
+                <p class="post-excerpt">在现代前端开发中，选择合适的工具链和架构模式对项目的成功至关重要。本文将介绍如何使用最新的技术栈构建高效、可维护的前端项目...</p>
             </div>
-
-            <aside class="sidebar">
-                <div class="sidebar-section about-me">
-                    <h3>关于我</h3>
-                    <p>我是一名热爱技术的开发者，专注于前端开发和用户体验设计。我喜欢通过博客分享知识，与社区互动，并不断学习新的技术。</p>
-                </div>
-
-                <div class="sidebar-section">
-                    <h3>分类</h3>
-                    <ul class="social-links">
-                        <li><a href="#">前端开发 (12)</a></li>
-                        <li><a href="#">JavaScript (8)</a></li>
-                        <li><a href="#">React (6)</a></li>
-                        <li><a href="#">CSS (4)</a></li>
-                        <li><a href="#">Node.js (3)</a></li>
-                    </ul>
-                </div>
-
-                <div class="sidebar-section">
-                    <h3>社交链接</h3>
-                    <ul class="social-links">
-                        <li><a href="https://github.com" target="_blank">GitHub</a></li>
-                        <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
-                        <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-                        <li><a href="mailto:example@email.com">邮箱</a></li>
-                    </ul>
-                </div>
-            </aside>
-        </div>
+            <div class="post">
+                <h3>JavaScript中的异步编程详解</h3>
+                <div class="post-meta">发布于 2025年12月20日</div>
+                <p class="post-excerpt">异步编程是JavaScript的核心概念之一。本文将深入探讨Promise、async/await等异步编程技术的原理和最佳实践...</p>
+            </div>
+            <div class="post">
+                <h3>React性能优化实战指南</h3>
+                <div class="post-meta">发布于 2025年12月15日</div>
+                <p class="post-excerpt">在大型React应用中，性能优化是必不可少的环节。本文将分享一些实用的性能优化技巧和工具...</p>
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2025 徐洪亮的个人博客. 保留所有权利.</p>
+            <p>联系方式: xuhongliang@example.com</p>
+        </footer>
     </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 我的个人博客. 保留所有权利.</p>
-        </div>
-    </footer>
 </body>
 </html>
