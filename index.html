@@ -1,72 +1,306 @@
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人博客</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
 
-    <title>徐宏亮的博客 by xuhongliang</title>
-  </head>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-  <body>
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 1rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        /* Blog Posts */
+        .blog-posts {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .post {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .post:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .post h2 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .post-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .post-excerpt {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            align-self: start;
+        }
+
+        .sidebar-section {
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-section h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .about-me p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .social-links {
+            list-style: none;
+        }
+
+        .social-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #764ba2;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+            
+            .header-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
     <header>
-      <div class="inner">
-        <h1>徐宏亮的博客</h1>
-        <h2>徐宏亮的博客</h2>
-        <a href="https://github.com/xuhongliang" class="button"><small>Follow me on</small> GitHub</a>
-      </div>
+        <div class="container">
+            <div class="header-content">
+                <h1>我的个人博客</h1>
+                <p>分享技术、生活与思考</p>
+            </div>
+        </div>
     </header>
 
-哈哈
-  Everything will be ok!
-  
-  <h1><font color="#FF0000">**************************************</h1>
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于</a></li>
+                <li><a href="#blog">博客</a></li>
+                <li><a href="#contact">联系</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<p>为什么坚持，想一想当初。 </p>
-<p>    ==导航==  </p>
-<hr />
+    <div class="container">
+        <div class="main-content">
+            <div class="blog-posts">
+                <h2>最新文章</h2>
+                
+                <article class="post">
+                    <h2>如何开始学习前端开发</h2>
+                    <div class="post-meta">发布于 2023年12月15日 | 标签: 前端, JavaScript</div>
+                    <div class="post-excerpt">
+                        <p>前端开发是一个充满挑战和机遇的领域。随着技术的不断发展，学习前端开发的路径也在不断变化。本文将分享一些学习前端开发的有效方法和资源...</p>
+                    </div>
+                    <a href="#" class="read-more">阅读更多 →</a>
+                </article>
 
-<body bgcolor="#ffffff">
+                <article class="post">
+                    <h2>React 最佳实践指南</h2>
+                    <div class="post-meta">发布于 2023年12月10日 | 标签: React, JavaScript</div>
+                    <div class="post-excerpt">
+                        <p>React 作为目前最流行的前端框架之一，掌握其最佳实践对于开发高质量应用至关重要。本文将介绍一些在实际项目中验证过的 React 最佳实践...</p>
+                    </div>
+                    <a href="#" class="read-more">阅读更多 →</a>
+                </article>
 
+                <article class="post">
+                    <h2>个人项目开发经验分享</h2>
+                    <div class="post-meta">发布于 2023年12月5日 | 标签: 项目管理, 经验</div>
+                    <div class="post-excerpt">
+                        <p>在过去的一年中，我完成了几个个人项目。通过这些项目，我学到了很多宝贵的经验。本文将分享我在项目规划、开发和部署过程中的一些心得体会...</p>
+                    </div>
+                    <a href="#" class="read-more">阅读更多 →</a>
+                </article>
 
-<p>
-<font color="##3b5998">
-脸书 facebook  
-</font><a
-href="https://www.facebook.com/l.xuhongliang.l">https://www.facebook.com/l.xuhongliang.l</a> </p>
+                <article class="post">
+                    <h2>技术博客写作心得</h2>
+                    <div class="post-meta">发布于 2023年11月28日 | 标签: 写作, 技术</div>
+                    <div class="post-excerpt">
+                        <p>写作是巩固知识和分享经验的重要方式。本文将分享我在技术博客写作过程中的一些心得，包括如何选题、如何组织内容以及如何保持持续更新...</p>
+                    </div>
+                    <a href="#" class="read-more">阅读更多 →</a>
+                </article>
+            </div>
 
-<p>
-<font color="##2E9AFE">
-推特 twitter   
-</font><a
-href="https://twitter.com/l_xuhongliang_l">https://twitter.com/l_xuhongliang_l</a> </p>
+            <aside class="sidebar">
+                <div class="sidebar-section about-me">
+                    <h3>关于我</h3>
+                    <p>我是一名热爱技术的开发者，专注于前端开发和用户体验设计。我喜欢通过博客分享知识，与社区互动，并不断学习新的技术。</p>
+                </div>
 
-<p>
-<font color="#FF4000">
-新浪微博 sina weibo     
-</font><a
-href="http://weibo.com/xinjiangxuhongliang">http://weibo.com/xinjiangxuhongliang</a> </p>
+                <div class="sidebar-section">
+                    <h3>分类</h3>
+                    <ul class="social-links">
+                        <li><a href="#">前端开发 (12)</a></li>
+                        <li><a href="#">JavaScript (8)</a></li>
+                        <li><a href="#">React (6)</a></li>
+                        <li><a href="#">CSS (4)</a></li>
+                        <li><a href="#">Node.js (3)</a></li>
+                    </ul>
+                </div>
 
-<p>
-<font color="##2E9AFE">
-腾讯微博  tencent weibo     
-</font><a
-href="http://t.qq.com/l_xuhongliang_l">http://t.qq.com/l_xuhongliang_l</a> </p>
+                <div class="sidebar-section">
+                    <h3>社交链接</h3>
+                    <ul class="social-links">
+                        <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                        <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+                        <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                        <li><a href="mailto:example@email.com">邮箱</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
 
-
-<p>
-我的头像：
-<a href="https://github.com/xuhongliang">
-<img border="0" src="me.jpg" />
-</a>
-</p>
-
-  </body>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 我的个人博客. 保留所有权利.</p>
+        </div>
+    </footer>
+</body>
 </html>
