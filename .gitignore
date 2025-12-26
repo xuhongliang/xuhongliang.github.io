@@ -1,4 +1,17 @@
-Nothing should be ignored based on the provided file changes. The only modified file is 'index.html', which is a source file and should not be added to .gitignore.
-blog-deployment-files-updated.tar.gz
+```
+# Compressed files
+*.tar.gz
 
-blog-deployment-files.tar.gz
+# Logs and temp files
+*.log
+*.tmp
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Editors
+.vscode/
+.idea/
+```
